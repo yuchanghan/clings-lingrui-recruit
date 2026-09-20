@@ -15,8 +15,10 @@
  * 验证: clings 检查程序退出码为 3
  */
 
-#error TODO: Fix this exercise. Run "clings hint" for help.
-
-int main(void) {
-#error TODO: Fix this exercise. Run "clings hint" for help.
+//#error TODO: Fix this exercise. Run "clings hint" for help.
+int global = 2;
+int main() {
+    int local = 1;
+//#error TODO: Fix this exercise. Run "clings hint" for help.
+    return global + local;
 }

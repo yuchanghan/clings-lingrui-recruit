@@ -16,15 +16,28 @@
  * 验证：stdout 精确匹配 "max prime is 97\n"
  */
 
-#include <math.h>
+#include <math.h>//可以使用sqrt
 #include <stdio.h>
 
 int main(void) {
     int num;
     int i;
     int max = 0;
-
-#error TODO: Fix this exercise. Run "clings hint" for help.
+    int tmp;
+    int n = 0;
+    for (num = 2;num <= 100;num++) {
+        tmp = (int)sqrt((double)num);//因为sqrt强制要求double,所以要转化
+        for (int m = 2;m <= tmp;m++) {
+            n = 0;
+            if (num % m == 0) {
+                 n=1;
+                 break;
+            }
+        }
+        if (n==0) {
+            max = num;
+        }
+    }
 
     printf("max prime is %d\n", max);
 

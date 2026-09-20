@@ -10,4 +10,8 @@
  * 验证：clings 检查程序退出码为 0
  */
 
-#error TODO: Write a complete main function that returns 0. Run "clings hint" for help.
+//#error TODO: Write a complete main function that returns 0. Run "clings hint" for help.
+int main ()
+{
+    return 0;
+}

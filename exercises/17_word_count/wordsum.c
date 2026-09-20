@@ -17,13 +17,10 @@
  */
 
 #include <stdio.h>
-
 int get_input_type(char c) {
     if (c >= 'a' && c <= 'z') return 1;
-
     if (c >= 'A' && c <= 'Z') return 1;
-
-    return 0;
+    return 0;//如果return了1，就结束了不会再return0了
 }
 
 int main(void) {
@@ -31,21 +28,35 @@ int main(void) {
     int state = 0;
     int i = 0;
     int words = 0;
-    char *p = NULL;
+    char* p = NULL;
     int counter = 0;
-
     fgets(buf, sizeof(buf), stdin);
-    /* 去掉换行 */
     for (i = 0; buf[i]; i++)
         if (buf[i] == '\n') {
             buf[i] = '\0';
             break;
-        }
-
+        }//这一步将末尾回车改为\0
     i = 0;
-
-#error TODO: Implement state machine loop with 4 branches for word counting. Run "clings hint" for help.
-
+    while (1==1) {
+        int input = get_input_type(buf[i]);
+        if (buf[i] == '\0') break;
+        if (state == 0 && input == 0) {
+            state = 0;
+        }
+        else if (state == 0 && input == 1) {
+            state = 1; p = &buf[i]; counter = 1;
+        }
+        else if (state == 1 && input == 0) {
+            state = 0; words++; printf("word %d found!\n", words);
+            for (int i = 0; i < counter; i++)
+                printf("%c", p[i]);
+            printf("\n");
+        }
+        else if (state == 1 && input == 1) {
+            state = 1; counter++;
+        }
+        i++;
+    }
     printf("there is %d words found!\n", words);
     return 0;
 }

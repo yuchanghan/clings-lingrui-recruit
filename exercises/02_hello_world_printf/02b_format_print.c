@@ -17,10 +17,10 @@
  */
 
 #include <stdio.h>
-
-#error TODO: Fix this exercise. Run "clings hint" for help.
-
-int main(void) {
-#error TODO: Fix this exercise. Run "clings hint" for help.
+int global = 200;
+int main() {
+    int local = 100;
+    printf("local = %d\n",local);
+    printf("global = %#x\n",global);
     return 0;
 }

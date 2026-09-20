@@ -15,10 +15,8 @@
  */
 
 #include <stdio.h>
-
 #define ROW 5
 #define COL 5
-
 int chessboard[ROW][COL];
 
 /* 平台无关的伪随机数生成器 (Linear Congruential Generator) */
@@ -29,16 +27,28 @@ int my_rand(void) {
 }
 
 void init_chessboard(void) {
-#error TODO: Fill chessboard[i][j] = my_rand() % 2 with nested loops. Run "clings hint" for help.
+    for(int i = 1;i <= COL;i++){
+        for(int j = 1;j <= ROW;j++){
+            chessboard[i][j]=0;
+        }
+    }
 }
 
 void print_chessboard(void) {
-#error TODO: Print board with nested loops, spaces between elements. Run "clings hint" for help.
+    for(int i = 1;i <= COL;i++){
+        for(int j = 1;j <= ROW;j++){
+            chessboard[i][j]=my_rand() % 2;
+            if(j > 1){
+                printf(" ");
+            }
+            printf("%d", chessboard[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 int main(void) {
     init_chessboard();
     print_chessboard();
-
     return 0;
 }

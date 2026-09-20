@@ -15,13 +15,16 @@
 
 #include <stdio.h>
 
-int main(void) {
-    int i;
+int main() {
+    int i=10;
     int sum = 0;
-
-#error TODO: Fix this exercise. Run "clings hint" for help.
-
-#error TODO: Fix this exercise. Run "clings hint" for help.
-
+    for(int counter = 10;counter>0;counter--){
+        printf("counter = %d\n",counter); 
+    }
+    do{
+    sum = sum + i;
+    i--;
+    }while(i>0);
+    printf("sum = %d\n",sum);
     return 0;
 }

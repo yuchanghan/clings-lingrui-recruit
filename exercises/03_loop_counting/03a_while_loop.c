@@ -14,9 +14,12 @@
  */
 
 #include <stdio.h>
-
+int counter = 0;
 int main(void) {
-#error TODO: Fix this exercise. Run "clings hint" for help.
-
+//#error TODO: Fix this exercise. Run "clings hint" for help.
+while(counter < 10){
+counter++;
+printf("counter = %d\n",counter);
+}
     return 0;
 }
